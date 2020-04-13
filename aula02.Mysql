@@ -1,0 +1,40 @@
+show databases;
+create database agenda;
+use agenda;
+show tables;
+create table tbcontatos(
+    id int primary key,
+    nome varchar(50) not null,
+    fone varchar(15) not null,
+    email varchar(50)
+);
+show tables;
+describe tbcontatos;
+insert into tbcontatos(id,nome,fone,email)
+values(1,'cristiano','1111-1111','jesus@outlook.com');
+
+insert into tbcontatos(id,nome,fone,email)
+values(2,'josue','2222-2222','josu@gmai.com');
+
+insert into tbcontatos(id,nome,fone,email)
+values(3,'pedro','3333-3333','BiRiri@gmail.com');
+
+insert into tbcontatos(id,nome,fone)
+values(4,'jesus','9999-9999');
+
+insert into tbcontatos(id,nome,fone,email)
+values(5,'Jovirone','5555-5555','xesque@gmail.com');
+select * from tbcontatos;
+
+select * from tbcontatos where id = 2;
+select * from tbcontatos where nome = 'cristiani';
+select * from tbcontatos where nome like 'B%';
+select * from tbcontatos order by nome asc;
+select nome,fone from tbcontatos;
+select nome as contato, fone as telefone from tbcontatos;
+update tbcontatos set nome='cris' where id = 1;
+update tbcontatos set email='ironmaidem@gmail.com' where id = 4;
+update tbcontatos set fone='9999-1234', email='linuxx@tux.com' where id = 2;
+select * from tbcontatos;
+delete from tbcontatos where id = 5;
+select * from tbcontatos;
