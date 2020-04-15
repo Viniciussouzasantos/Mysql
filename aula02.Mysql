@@ -38,3 +38,35 @@ update tbcontatos set fone='9999-1234', email='linuxx@tux.com' where id = 2;
 select * from tbcontatos;
 delete from tbcontatos where id = 5;
 select * from tbcontatos;
+create database dbinfox;
+show databases;
+use dbinfox;
+create table tbusuarios(
+iduser int primary key,
+usuario varchar(50) not null,
+fone varchar(15),
+login varchar(15) not null unique,
+senha varchar(15) not null 
+);
+describe tbusuarios;
+insert into tbusuarios(iduser,usuario,fone,login,senha)
+values(1,'vinicius santos','1111-1111','viniciussantos','123456');
+select * from tbusuarios;
+insert into tbusuarios(iduser,usuario,fone,login,senha)
+values(2,'wellington santos','1111-1112','wellsantos','1234');
+insert into tbusuarios(iduser,usuario,fone,login,senha)
+values(3,'grazi','1111-1431','grazi1','12');
+update tbusuarios set fone='8888-8888' where iduser=2;
+delete from tbusuarios where iduser =3;
+create table tbclientes(
+idcli int primary key auto_increment,
+nomecli varchar(50) not null,
+endcli varchar(100),
+fonecli varchar(50) not null,
+emailcli varchar(50)
+);
+describe tbclientes;
+insert into tbclientes(nomecli,endcli,fonecli,emailcli)
+values('vinicius santos','av napoleão','1111-1111','visouzasantos30@gmail.com');
+select * from tbclientes;
+
